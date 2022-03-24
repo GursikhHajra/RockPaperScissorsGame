@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Rock Paper Scissors Game
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,35 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Rock Paper Scissors Game</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<div id="color">
+  <h3>1 for 'rock', 2 for 'paper', 3 for 'scissors'</h3>
+  <br /><br /><br /><br /><br />
+</div>
+
+
+  <div id="form">
+  <form >
+    <ion-item>
+      <ion-label color="danger" position="floating">Enter a Number(Click on me to see input)</ion-label>
+      <ion-input color="warning" required type="number" [(ngModel)]="cId" name="cId" min="1" max="3" placeholder="1 for 'rock', 2 for 'paper', 3 for 'scissors'">
+      </ion-input>
+    </ion-item>
+    <br><br />
+    <ion-button type="submit" (click)="check()">Pick</ion-button>
+  </form>
+  <br /><br /><br /><br /><br />
+</div>
+
+<div id="output">
+ <h4>{{outMsg.msg}}</h4> <br />
+ <h3>Total: {{runningTotal}}</h3><br />
+ <h3>Result: {{totalMsg}}</h3>
+ <br /><br /><br /><br /><br />
+</div>
+
+<app-f></app-f>
 </ion-content>
